@@ -1,0 +1,22 @@
+---
+title: "Wrangling"
+format: html
+---
+
+## Wrangling code
+```{python}
+#| eval: false
+# wrangling - get average flipper length by species, 
+# for penguins heavier than 4kg
+avg_flipper_length = (
+    penguins
+    # select penguins heavier than 4000g
+    .query("body_mass_g > 4000")
+    # group penguins by species
+    .groupby(["species"])
+    # select the column we want the average over
+    .flipper_length_mm
+    # calculate average
+    .mean()
+)
+```

@@ -1,0 +1,30 @@
+---
+title: Tabsets and penguins...
+format: html
+---
+
+## Plot
+
+```{python}
+#| echo: false
+#| warning: false
+import plotly.express as px
+import pandas as pd
+
+penguins = pd.read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv")
+
+px.scatter(
+    penguins,
+    x="bill_length_mm",
+    y="bill_depth_mm",
+    color="species",
+    labels={"bill_length_mm": "Bill Length /mm", "bill_depth_mm": "Bill Depth /mm"}
+)
+```
+
+## Data
+
+```{python}
+#| echo: false
+penguins
+```
